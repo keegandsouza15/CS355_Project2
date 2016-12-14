@@ -15,6 +15,15 @@ exports.getAll = function(callback) {
     });
 };
 
+exports.getDrivers = function(callback) {
+    //Sub Query
+    var query = 'Select * From (select *from Drivers)d join Employee e on e.Employee_id  = d.Employee_id;';
+
+    connection.query(query, function(err, result) {
+        callback(err, result);
+    });
+};
+
 /*
 exports.getById = function(account_id, callback) {
     var query = 'SELECT * FROM account WHERE account_id = ?';

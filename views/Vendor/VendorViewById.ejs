@@ -1,0 +1,15 @@
+<%- include("../includes/header.ejs", {title:"Vendor - result [0].Vendor_Name"}); %>
+<h1>Vendor</h1>
+
+<br>
+<ul>
+    <li>Vendor ID: <%= result[0].Vendor_id%></li>
+    <li>Vendor Name: <%= result[0].Vendor_Name %></li>
+    <li>Amount Sold to: <%=cost[0][0].Amount_Sold%></li>
+</ul>
+
+
+<br>
+
+<a href="/">Back</a>
+

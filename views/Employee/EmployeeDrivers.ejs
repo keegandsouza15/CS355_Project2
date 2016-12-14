@@ -1,0 +1,20 @@
+<%- include("../includes/header.ejs", {title:"Employee View All"}); %>
+<h1>Drivers</h1>
+<p>More indepth infomation about the drivers of our company.</p>
+
+<table border="1">
+    <tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Vehicle Tyle</th><th>Vehicle Color</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><%= result[i].First_Name %></td>
+        <td><%= result [i].Last_Name%></td>
+        <td><%= result[i].Email %></td>
+        <td><%= result[i].Vehicle_Type%></td>
+        <td><%= result[i].Vehicle_Color%></td>
+    </tr>
+    <% } %>
+</table>
+<br>
+<a href="/Employee/all">Back</a>
+
+</html>

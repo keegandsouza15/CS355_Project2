@@ -15,6 +15,29 @@ router.get('/all',function (req, res){
         };
     });
 });
+
+router.get('/', function(req, res) {
+    if (req.query.Vendor_id == null) {
+        res.send('Vendor id is null');
+    }
+    else {
+        Vendor_dal.getById(req.query.Vendor_id, function (err, result) {
+            Vendor_dal.getCost(req.query.Vendor_id, function (err, cost) {
+                if (err) {
+                    res.send(err);
+                }
+                else {
+                    res.render('Vendor/VendorViewById', {'result': result ,'cost':cost});
+                }
+            });
+        });
+    }
+});
+
+
+
+
+
 /*
 router.get('/add',function (req, res){
     Flavor_dal.getAll((function (err, result) {

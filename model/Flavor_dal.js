@@ -5,6 +5,7 @@ var db  = require('./db_connection.js');
 var connection = mysql.createConnection(db.config);
 
 exports.getAll = function(callback) {
+    // Uses a view.
     var query = 'SELECT * FROM Flavor_Inventor_view';
 
     connection.query(query, function(err, result) {

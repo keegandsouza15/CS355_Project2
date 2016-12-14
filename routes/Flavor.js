@@ -11,7 +11,7 @@ router.get('/all',function (req, res){
                 res.send(err);
             }
             else {
-                res.render('Flavor/FlavorViewAll', {'result': result},{'cost':cost})
+                res.render('Flavor/FlavorViewAll', {'result': result})
             };
         });
 });

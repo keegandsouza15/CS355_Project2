@@ -12,13 +12,22 @@ exports.getAll = function(callback) {
     });
 };
 
-exports.insert = function(params, callback) {
-    var query = 'INSERT INTO Flavor(Flavor_Name,  Package_Design) VALUES (?, ?)';
-    var queryData = [params.Flavor_Name, params.Package_Design];
+exports.getById = function(Vendor_id, callback) {
+    var query = 'SELECT * FROM Vendor WHERE Vendor_id = ?';
+    var queryData = [Vendor_id];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
     });
+};
 
+exports.getCost = function(Vendor_id, callback){
+    var query = 'CALL Get_Vendor_Sales (?)';
+    var queryData = [Vendor_id];
+
+    connection.query(query, queryData, function(err, cost) {
+        callback(err, cost);
+    });
 }
+
 

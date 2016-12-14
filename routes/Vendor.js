@@ -60,15 +60,15 @@ exports.update = function(params, callback) {
 
 router.get('/update', function(req, res) {
     Vendor_dal.update(req.query, function(err, result){
-        res.redirect(302, '/Vendor/all');
+        res.render('Conformation');
     });
 });
 
 
 
 router.get('/edit', function(req, res){
-    if(req.query.Vendor_id == null) {
-        res.send('A Vendor id is required');
+    if(req.query.Vendor_Name == null) {
+        res.send('A Vendor Name is required');
     }
     else {
         Vendor_dal.getById(req.query.Vendor_id, function(err, result){
@@ -81,54 +81,6 @@ router.get('/edit', function(req, res){
     }
 
 });
-/*
-router.get('/add',function (req, res){
-    Flavor_dal.getAll((function (err, result) {
-        if(err){
-            res.send(err);
-        }
-        else{
-            res.render('Flavor/FlavorAdd',{'result':result})
-        }
-    }))
-})
 
-router.get('/insert', function(req, res){
-    // simple validation
-
-    if(req.query.Flavor_Name == null) {
-        res.send('Flavor Name must be provided.');
-    }
-    else if(req.query.Package_Design == null) {
-        res.send('Package Design must be provided.');
-    }
-    else {
-        Flavor_dal.insert(req.query, function(err,result) {
-            if (err) {
-                res.send(err);
-            }
-            else {
-                res.render('Conformation');
-            }
-        });
-    }
-});
-
-router.get('/delete', function(req, res){
-    if(req.query.account_id == null) {
-        res.send('address_id is null');
-    }
-    else {
-        account_dal.delete(req.query.account_id, function(err, result){
-            if(err) {
-                res.send(err);
-            }
-            else {
-                //poor practice, but we will handle it differently once we start using Ajax
-                res.redirect(302, '/account/all');
-            }
-        });
-    }
-});*/
 
 module.exports = router;

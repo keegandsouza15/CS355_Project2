@@ -9,7 +9,7 @@
     <% for (var i = 0; cost.length > i; i++) {%>
         <tr>
             <td><%= cost [i].Ingredient_Name%></td>
-            <td><%= cost [i].Total_Cost%></td>
+            <td><%= '$' + cost [i].Total_Cost%></td>
         </tr>
 
         <% } %>

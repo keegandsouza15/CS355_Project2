@@ -21,13 +21,4 @@ exports.getCost = function(callback) {
     });
 };
 
-/*exports.insert = function(params, callback) {
-    var query = 'INSERT INTO Flavor(Flavor_Name,  Package_Design) VALUES (?, ?)';
-    var queryData = [params.Flavor_Name, params.Package_Design];
 
-    connection.query(query, queryData, function(err, result) {
-        callback(err, result);
-    });
-
-}
-*/

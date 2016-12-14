@@ -5,11 +5,13 @@
 
 <br>
 <table border = "1">
-    <th>Flavor Name</th><th>Flavor Inventor</th>
+    <th>Flavor Name</th><th>Flavor Inventor</th><th>Date Created</th><th>Package Design</th>
     <% for (var i = 0; result.length > i; i++) {%>
         <tr>
             <td><%= result [i].Flavor_Name%></td>
             <td><%= result [i].First_Name +', ' +result[i].Last_Name%></td>
+            <td><%= result [i].Date_Invented%></td>
+            <td><%- result [i].Package_Design%></td>
         </tr>
 
         <% } %>

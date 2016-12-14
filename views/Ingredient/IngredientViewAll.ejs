@@ -5,10 +5,12 @@
 
 <br>
 <table border = "1">
-    <th>Ingredient Name</th>
+    <th>Ingredient Name</th><th>Cost Per Pound</th><th>Storage Life</th>
     <% for (var i = 0; result.length > i; i++) {%>
         <tr>
             <td><%= result [i].Ingredient_Name%></td>
+            <td><%= '$' + result [i].Cost_Per_Pound%></td>
+            <td><%= result [i].Storage_Life + ' days'%></td>
         </tr>
 
         <% } %>

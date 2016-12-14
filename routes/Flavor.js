@@ -5,6 +5,14 @@ var express = require('express');
 var router = express.Router();
 var Flavor_dal = require('../model/Flavor_dal')
 
+router.get('/',function (req,res){
+    res.send(test);
+
+})
+
+
+
+
 router.get('/all',function (req, res){
     Flavor_dal.getAll(function (err, result) {
         if(err){
@@ -15,3 +23,5 @@ router.get('/all',function (req, res){
         }
     })
 })
+
+module.exports = router;

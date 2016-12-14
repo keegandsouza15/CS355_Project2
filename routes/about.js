@@ -13,7 +13,7 @@ router.get('/',function (req,res){
 })
 
 router.get('/er', function (req,res) {
-    res.render('Project 1 ER Diagram');
+    res.render('Project 1 ER Diagram.ejs');
 
 })
 

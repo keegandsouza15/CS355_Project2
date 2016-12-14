@@ -3,19 +3,19 @@
  */
 var express = require('express');
 var router = express.Router();
-var Flavor_dal = require('../model/Flavor_dal')
+var Vendor_dal = require('../model/Vendor_dal')
 
 router.get('/all',function (req, res){
-    Flavor_dal.getAll(function (err, result) {
-            if (err) {
-                res.send(err);
-            }
-            else {
-                res.render('Flavor/FlavorViewAll', {'result': result},{'cost':cost})
-            };
-        });
+    Vendor_dal.getAll(function (err, result) {
+        if(err){
+            res.send(err);
+        }
+        else{
+            res.render('Vendor/VendorViewAll',{'result':result})
+        };
+    });
 });
-
+/*
 router.get('/add',function (req, res){
     Flavor_dal.getAll((function (err, result) {
         if(err){
@@ -63,6 +63,6 @@ router.get('/delete', function(req, res){
             }
         });
     }
-});
+});*/
 
 module.exports = router;

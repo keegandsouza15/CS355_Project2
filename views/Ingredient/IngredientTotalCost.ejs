@@ -1,0 +1,20 @@
+<%- include("../includes/header.ejs", {title:"Ingredient - View All"}); %>
+<h1>Ingredients-Total Cost</h1>
+
+<p>Ingredients that are used in all flavors and their total cost.</p>
+
+<br>
+<table border = "1">
+    <th>Ingredient Name</th><th>Total Cost</th>
+    <% for (var i = 0; cost.length > i; i++) {%>
+        <tr>
+            <td><%= cost [i].Ingredient_Name%></td>
+            <td><%= cost [i].Total_Cost%></td>
+        </tr>
+
+        <% } %>
+</table>
+<br>
+<a href="/Ingredient/all">Back</a>
+
+

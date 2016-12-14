@@ -1,0 +1,23 @@
+<%- include("../includes/header.ejs", {title:"Employee View All"}); %>
+<h1>Employee</h1>
+<a href="/account/add">Add New Employee</a> <br />
+<table border="1">
+    <tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Action</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/Employee/?Employee_id=<%= result[i].Employee_id %>"><%= result[i].First_Name %></a></td>
+        <td><%= result [i].Last_Name%></td>
+        <td><%= result[i].Email %></td>
+        <td>
+            <button onclick="event.preventDefault();window.location.href='/account/edit/?account_id=<%= result[i].Employee_id %>'">Edit</button>
+            <form action="/account/delete/">
+                <input type="hidden" name="account_id" id="account_id" value="<%= result[i].account_id %>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>

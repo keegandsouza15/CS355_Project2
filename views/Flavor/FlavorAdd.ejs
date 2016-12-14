@@ -7,7 +7,34 @@
     Package_Design:  <input id="Package_Design" name="Package_Design" type="text" />
     <br>
     <br>
+
+    Choose the Inventor <br />
+    <select id="Employee_id" name="Employee_id">
+        <% for(var i=0; inventor.length > i; i++ ) {
+            var selected = "";
+            if(inventor[i].Employee_id != null) {
+                selected = "selected";
+            }
+        %>
+        <option value="<%= inventor[i].Employee_id %>" <%= selected %> ><%= inventor[i].First_Name + ', ' + inventor[i].Last_Name %></option>
+        <% } %>
+    </select>
+
+    <!-- Initialize the multiselect plugin: -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#Employee_id').multiselect();
+        });
+    </script>
+
+    <br>
+    <br>
     <input type="submit" />
+
+
+
+
+
 </form>
 <br>
 <a href="/">Back</a>

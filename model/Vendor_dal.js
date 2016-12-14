@@ -30,4 +30,20 @@ exports.getCost = function(Vendor_id, callback){
     });
 }
 
+exports.edit = function(Vendor_id, callback) {
+    var query = 'select * from Vendor v join Addresses a on v.Vendor_id = a.Vendor_id';
+    var queryData = [Vendor_id]
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
 
+exports.update = function(params, callback) {
+    var query = 'UPDATE Vendor SET Vendor_name = ? WHERE Vendor_id = ?';
+    var queryData = [params.Vendor_Name, params.Vendor_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+
+};

@@ -17,15 +17,19 @@ router.get('/all',function (req, res){
 });
 
 router.get('/add',function (req, res){
-    Flavor_dal.getAll((function (err, result) {
-        if(err){
-            res.send(err);
-        }
-        else{
-            res.render('Flavor/FlavorAdd',{'result':result})
-        }
-    }))
+    Flavor_dal.getAll(function (err, result){
+        Flavor_dal.getInventors(function (err, inventor) {
+
+
+            if(err){
+                res.send(err);
+            }
+            else{
+                res.render('Flavor/FlavorAdd',{'result':result ,'inventor': inventor})
+            }
+    })
 })
+});
 
 router.get('/insert', function(req, res){
     // simple validation

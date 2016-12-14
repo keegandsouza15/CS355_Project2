@@ -6,7 +6,10 @@
     <th>Vendor Name</th>
     <% for (var i = 0; result.length > i; i++) {%>
         <tr>
-            <td><a href="/Vendor/?Vendor_id=<%= result[i].Vendor_id %>"><%= result[i].Vendor_Name %></a></td>
+            <td>
+                <a href="/Vendor/?Vendor_id=<%= result[i].Vendor_id %>"><%= result[i].Vendor_Name %></a>
+                <button onclick="event.preventDefault();window.location.href='/Vendor/edit/?Vendor_id=<%= result[i].Vendor_id %>'">Edit</button>
+            </td>
         </tr>
 
         <% } %>

@@ -19,7 +19,7 @@ router.get('/all', function(req, res) {
 
 });
 
-d
+
 router.get('/drivers', function(req, res){
     Employee_dal.getDrivers(function(err,result) {
         if (err) {
